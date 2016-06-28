@@ -14,6 +14,10 @@ maxRow = sheet.max_row
 #print ("Max Row: ", maxRow)
 maxCol = sheet.max_column
 #print ("Max Column: ", maxCol)
+
+outputWB = openpyxl.Workbook()
+outputSheet = outputWB.active
+#flag will let you break out of the loop if a word is ever met
 flag = false
 for i in range (2,maxRow):
 	for word in words:
@@ -27,8 +31,7 @@ for i in range (2,maxRow):
 		continue
 
 #output data to sheet
-outputWB = openpyxl.Workbook()
-outputSheet = outputWB.active
+
 
 
 
