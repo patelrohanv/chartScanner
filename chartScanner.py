@@ -14,10 +14,21 @@ maxRow = sheet.max_row
 #print ("Max Row: ", maxRow)
 maxCol = sheet.max_column
 #print ("Max Column: ", maxCol)
-
+flag = false
 for i in range (2,maxRow):
 	for word in words:
 		if word in sheet.cell(row=i, column = 2).value:
 			#print (i);
-			print ("found")
+			print ("{0} found in row {1} column {2}", word, i , 2)
+			flag = true
+			continue
+	if flag = true:
+		flag = false
+		continue
+
+#output data to sheet
+outputWB = openpyxl.Workbook()
+outputSheet = outputWB.active
+
+
 
