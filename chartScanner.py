@@ -24,7 +24,7 @@ for i in range (2,maxRow):
 			print ("{0} found in row {1} column {2}", word, i , 2)
 			flag = true
 			break
-	if flag = true:
+	if flag == true:
 		flag = false
 		continue
 	print ("Look at row {0}",i)
