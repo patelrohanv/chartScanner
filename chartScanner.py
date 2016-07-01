@@ -15,8 +15,6 @@ maxRow = sheet.max_row
 maxCol = sheet.max_column
 #print ("Max Column: ", maxCol)
 
-outputWB = openpyxl.Workbook()
-outputSheet = outputWB.active
 #flag will let you break out of the loop if a word is ever met
 flag = false
 for i in range (2,maxRow):
@@ -25,12 +23,11 @@ for i in range (2,maxRow):
 			#print (i);
 			print ("{0} found in row {1} column {2}", word, i , 2)
 			flag = true
-			continue
+			break
 	if flag = true:
 		flag = false
 		continue
-
-#output data to sheet
+	print ("Look at row {0}",i)
 
 
 
