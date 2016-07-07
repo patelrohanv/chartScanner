@@ -8,6 +8,7 @@ wb.get_sheet_names()
 page = input("Which sheet do you wish to work with: ")
 sheet = wb.get_sheet_by_name(page)
 #save value for highest row and column, will be used later for loops
+searchCol = input("What column are you searching: ")
 words = input("What words do you want to search for: ")
 words.split()
 maxRow = sheet.max_row
@@ -15,22 +16,20 @@ maxRow = sheet.max_row
 maxCol = sheet.max_column
 #print ("Max Column: ", maxCol)
 
-outputWB = openpyxl.Workbook()
-outputSheet = outputWB.active
+
 #flag will let you break out of the loop if a word is ever met
 flag = false
 for i in range (2,maxRow):
 	for word in words:
-		if word in sheet.cell(row=i, column = 2).value:
+		if word in sheet.cell(row=i, column = searchCol).value:
 			#print (i);
 			print ("{0} found in row {1} column {2}", word, i , 2)
 			flag = true
-			continue
-	if flag = true:
+			break
+	if flag == true:
 		flag = false
 		continue
-
-#output data to sheet
+	print ("Look at row {0}",i)
 
 
 
